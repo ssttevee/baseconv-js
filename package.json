@@ -1,0 +1,15 @@
+{
+    "name": "baseconv",
+    "version": "1.0.0",
+    "author": {
+        "name": "Steve Lam",
+        "email": "stevyo99@yahoo.ca",
+        "url": "https://github.com/ssttevee"
+    },
+    "scripts": {
+        "build": "tsc --module commonjs --target esnext index.ts common.ts"
+    },
+    "devDependencies": {
+        "typescript": "^3.4.3"
+    }
+}
