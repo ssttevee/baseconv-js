@@ -1,10 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("./index");
-exports.charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-exports.base2 = new index_1.Base(exports.charset.slice(0, 2));
-exports.base8 = new index_1.Base(exports.charset.slice(0, 8));
-exports.base10 = new index_1.Base(exports.charset.slice(0, 10));
-exports.base16 = new index_1.Base(exports.charset.slice(0, 16));
-exports.base36 = new index_1.Base(exports.charset.slice(0, 36));
-exports.base62 = new index_1.Base(exports.charset);
+import { Alphabet } from './mod';
+
+export const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+export const base2 = new Alphabet(chars.slice(0, 2));
+export const base8 = new Alphabet(chars.slice(0, 8));
+export const base10 = new Alphabet(chars.slice(0, 10));
+export const base16 = new Alphabet(chars.slice(0, 16));
+export const base36 = new Alphabet(chars.slice(0, 36));
+export const base62 = new Alphabet(chars);
+
+export { base2 as bin, base8 as oct, base10 as dec, base16 as hex };

@@ -1,15 +1,25 @@
 {
-    "name": "baseconv",
-    "version": "1.0.0",
+    "name": "@ssttevee/baseconv",
+    "version": "2.0.0",
     "author": {
         "name": "Steve Lam",
         "email": "stevyo99@yahoo.ca",
         "url": "https://github.com/ssttevee"
     },
+    "files": [
+        "mod.js",
+        "mod.d.ts",
+        "mod.ts",
+        "common.js",
+        "common.d.ts",
+        "common.ts"
+    ],
     "scripts": {
-        "build": "tsc --module commonjs --target esnext index.ts common.ts"
+        "build": "deno bundle mod.ts -- mod.js",
+        "test": "deno test"
     },
-    "devDependencies": {
-        "typescript": "^3.4.3"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ssttevee/baseconv-js"
     }
 }
