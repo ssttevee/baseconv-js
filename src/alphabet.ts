@@ -1,3 +1,4 @@
+import convert from './convert.ts';
 import { PlaceValues } from './types.ts';
 
 export class DuplicateCharacterError extends Error {
@@ -30,7 +31,7 @@ export default class Alphabet {
         }
     }
 
-    public decode(number: string): PlaceValues {
+    public decode(number: string): number[] {
         return Array.from(
             number,
             (char, index) => {
@@ -49,5 +50,13 @@ export default class Alphabet {
             values,
             (value) => this.chars[value]
         ).join('');
+    }
+
+    public to(radix: number, number: string): number[] {
+        return convert(this.radix, radix, this.decode(number));
+    }
+
+    public from(radix: number, values: PlaceValues): string {
+        return this.encode(convert(radix, this.radix, values));
     }
 }

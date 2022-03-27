@@ -1,1 +1,1 @@
-export type PlaceValues = number[];
+export type PlaceValues = ArrayLike<number> | Iterable<number>;

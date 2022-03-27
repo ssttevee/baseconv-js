@@ -1,12 +1,12 @@
 import { PlaceValues } from './types.ts';
 
-export default function divide(radix: number, dividend: PlaceValues, divisor: number): [quotient: PlaceValues, remainder: number] {
+export default function divide(radix: number, dividend: PlaceValues, divisor: number): [quotient: number[], remainder: number] {
     // manually divide place values with an arbitary radix
-    const quotient: PlaceValues = [];
-    let remainder: number = 0;
-    for (let value of dividend) {
+    const quotient: number[] = [];
+    let remainder = 0;
+    for (let value of Array.from(dividend)) {
         value += remainder * radix;
-        
+
         const q = Math.floor(value / divisor);
         remainder = value - (q * divisor);
         quotient.push(q);
