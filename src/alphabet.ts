@@ -34,14 +34,7 @@ export default class Alphabet {
     public decode(number: string): number[] {
         return Array.from(
             number,
-            (char, index) => {
-                const code = char.charCodeAt(0);
-                if (!this.#map.has(code)) {
-                    throw new UnexpectedCharacterError(index, code);
-                }
-
-                return this.#map.get(code)!;
-            }
+            (char) => this.valueOf(char.charCodeAt(0))
         );
     }
 
@@ -58,5 +51,22 @@ export default class Alphabet {
 
     public from(radix: number, values: PlaceValues): string {
         return this.encode(convert(radix, this.radix, values));
+    }
+
+    public valueOf(char: string | number): number {
+        const code = this.#charToCode(char);
+        if (!this.has(code)) {
+            throw new UnexpectedCharacterError(0, code);
+        }
+
+        return this.#map.get(code)!;
+    }
+
+    public has(char: string | number): boolean {
+        return this.#map.has(this.#charToCode(char));
+    }
+
+    #charToCode(char: string | number): number {
+        return typeof char === "number" ? char : char.charCodeAt(0);
     }
 }

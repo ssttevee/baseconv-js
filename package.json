@@ -1,6 +1,6 @@
 {
     "name": "@ssttevee/baseconv",
-    "version": "2.0.1",
+    "version": "2.0.4",
     "type": "module",
     "types": "./build/index.d.ts",
     "module": "./build/index.mjs",
@@ -15,7 +15,7 @@
     ],
     "scripts": {
         "prepack": "npm run build",
-        "build": "rollup -c",
+        "build": "rm -rf build && rollup -c",
         "test": "deno test"
     },
     "repository": {
