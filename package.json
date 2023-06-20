@@ -1,25 +1,44 @@
 {
     "name": "@ssttevee/baseconv",
-    "version": "2.0.0",
+    "version": "2.0.1",
+    "type": "module",
+    "types": "./build/index.d.ts",
+    "module": "./build/index.mjs",
+    "main": "./build/index.cjs",
     "author": {
         "name": "Steve Lam",
         "email": "stevyo99@yahoo.ca",
         "url": "https://github.com/ssttevee"
     },
     "files": [
-        "mod.js",
-        "mod.d.ts",
-        "mod.ts",
-        "common.js",
-        "common.d.ts",
-        "common.ts"
+        "build"
     ],
     "scripts": {
-        "build": "deno bundle mod.ts -- mod.js",
+        "prepack": "npm run build",
+        "build": "rollup -c",
         "test": "deno test"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ssttevee/baseconv-js"
+    },
+    "devDependencies": {
+        "@rollup/plugin-terser": "^0.4.3",
+        "@rollup/plugin-typescript": "^11.1.1",
+        "rollup": "^3.25.1",
+        "rollup-plugin-dts": "^5.3.0",
+        "tslib": "^2.5.3"
+    },
+    "exports": {
+        ".": {
+            "types": "./build/index.d.ts",
+            "import": "./build/index.mjs",
+            "require": "./build/index.cjs"
+        },
+        "./common": {
+            "types": "./build/common.d.ts",
+            "import": "./build/common.mjs",
+            "require": "./build/common.cjs"
+        }
     }
 }

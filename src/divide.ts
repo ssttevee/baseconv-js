@@ -1,4 +1,4 @@
-import { PlaceValues } from './types.ts';
+import type { PlaceValues } from './types';
 
 export default function divide(radix: number, dividend: PlaceValues, divisor: number): [quotient: number[], remainder: number] {
     // manually divide place values with an arbitary radix

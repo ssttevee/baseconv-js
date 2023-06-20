@@ -1,5 +1,5 @@
-import divide from './divide.ts';
-import { PlaceValues } from './types.ts';
+import divide from './divide';
+import type { PlaceValues } from './types';
 
 export default function convert(fromRadix: number, toRadix: number, values: PlaceValues): number[] {
     let value = Array.from(values);

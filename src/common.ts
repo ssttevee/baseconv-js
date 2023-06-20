@@ -1,4 +1,4 @@
-import Alphabet from './src/alphabet.ts';
+import Alphabet from './alphabet';
 
 export const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 

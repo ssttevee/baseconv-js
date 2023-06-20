@@ -1,5 +1,5 @@
-import convert from './convert.ts';
-import { PlaceValues } from './types.ts';
+import convert from './convert';
+import type { PlaceValues } from './types';
 
 export class DuplicateCharacterError extends Error {
     constructor(index: number, char: number) {

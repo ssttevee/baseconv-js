@@ -1,7 +1,7 @@
-import { Converter } from './mod.ts';
+import { Converter } from './build/index.mjs';
 import { assertEquals } from "https://deno.land/std@0.132.0/testing/asserts.ts";
 
-import { chars } from './common.ts';
+import { chars } from './build/common.mjs';
 
 function testConversion(from: string, to: string, fromNumber: string, toNumber: string) {
     assertEquals(new Converter(from, to).convert(fromNumber), toNumber);
