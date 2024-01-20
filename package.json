@@ -1,6 +1,6 @@
 {
     "name": "@ssttevee/baseconv",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "type": "module",
     "types": "./build/index.d.ts",
     "module": "./build/index.mjs",

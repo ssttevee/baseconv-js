@@ -12,8 +12,12 @@ Deno.test('dec <-> oct', () => {
     testConversion(chars.slice(0, 8), chars.slice(0, 10), '235', '157');
 });
 
+Deno.test('hex <-> b64', () => {
+    testConversion(chars.slice(0, 16), chars.slice(0, 62), '1014d0817fede66b32a5e210a0cf1c69', 'ulo98xldV86aI76KBDDip');
+})
+
 Deno.test('31 <-> 42', () => {
-    testConversion(chars.slice(0, 31), chars.slice(0, 42), '30569568', 'f2SC0kA');
+    testConversion(chars.slice(0, 31), chars.slice(0, 42), '30569568', 'f2sC0kA');
 });
 
 Deno.test('big number', () => {
